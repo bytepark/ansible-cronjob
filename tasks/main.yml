@@ -1,0 +1,10 @@
+---
+- name: Write Cronjobs
+  cron:
+    name: "{{ item.name }}"
+    minute: "{{ item.minute }}"
+    hour: "{{ item.hour }}"
+    job: "{{ item.job }}"
+    state: present
+  with_items:
+    - "{{ cronjobs }}"

@@ -1,0 +1,22 @@
+galaxy_info:
+  role_name: cronjob
+  author: Dev Team
+  description: Ansible Role to install and configure cronjobs
+  company: bytepark GmbH
+
+  license: license (MIT)
+
+  min_ansible_version: 2.4
+
+  platforms:
+   - name: Ubuntu
+     versions:
+     - xenial
+     - bionic
+
+  galaxy_tags:
+    - cron
+    - server
+    - cronjob
+
+dependencies: []
