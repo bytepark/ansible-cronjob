@@ -12,14 +12,23 @@ No further requirements besides bash.
 
 Role Variables
 --------------
-Variable defaults
+Variables to use
 
 ```
-# list of cronjobs
-#- { name: 'Example cronjob', minute: '20', hour: '*', job: 'curl www.google.com' }
+# define list of cronjobs
+#
+# cronjobs:
+# - name: 'Example cronjob'
+#   user: 'root'
+#   state: 'present'
+#   minute: '20'
+#   hour: '*'
+#   day: '*'
+#   weekday: '*'
+#   month: '*'
+#   job: 'curl www.google.com' 
 
 cronjobs: []
-
 ```
 
 Dependencies
@@ -42,4 +51,4 @@ MIT
 Author Information
 ------------------
 
-bytepark / 2018.
+bytepark / 2019.
