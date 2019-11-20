@@ -10,5 +10,15 @@
     job: "{{ item.job }}"
     state: "{{ item.state | default('present') }}"
     user: "{{ item.user | default('root') }}"
-  with_items:
-    - "{{ cronjobs }}"
+  when: special_time no in item
+  loop: "{{ cronjobs | flatten(levels=1) }}"
+
+- name: Write special time cronjobs
+  cron:
+    name: "{{ item.name }}"
+    job: "{{ item.job }}"
+    special_time: "{{ item.special_time }}"
+    state: "{{ item.state | default('present') }}"
+    user: "{{ item.user | default('root') }}"
+  when: special_time in item
+  loop: "{{ cronjobs | flatten(levels=1) }}"

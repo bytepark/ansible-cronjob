@@ -26,10 +26,13 @@ Variables to use
 #   day: '*'
 #   weekday: '*'
 #   month: '*'
-#   job: 'curl www.google.com' 
+#   job: 'curl www.google.com'
+#   special_time: 'daily'
 
 cronjobs: []
 ```
+
+If `special_time` is set, `minute`, `hour`, `day`, `weekday` and `month` are ignored.
 
 Dependencies
 ------------
