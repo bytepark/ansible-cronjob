@@ -10,7 +10,7 @@
     job: "{{ item.job }}"
     state: "{{ item.state | default('present') }}"
     user: "{{ item.user | default('root') }}"
-  when: special_time not in item
+  when: item.special_time is not defined
   with_items: 
     - "{{ cronjobs }}"
 
@@ -21,6 +21,6 @@
     special_time: "{{ item.special_time }}"
     state: "{{ item.state | default('present') }}"
     user: "{{ item.user | default('root') }}"
-  when: special_time in item
+  when: item.special_time is defined
   with_items: 
     - "{{ cronjobs }}"
